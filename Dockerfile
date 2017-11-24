@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # let Upstart know it's in a container
 ENV container docker
 
-MAINTAINER Hans-Joachim
+MAINTAINER Alexey Krapotkin
 
 #
 # Install some rudimental stuff
@@ -21,6 +21,7 @@ RUN locale-gen --purge en_US.UTF-8 \
     && apt-get update && apt-get dist-upgrade -y \
     && apt-get install -y  python-psycopg2 nano \
         git rabbitmq-server apache2 curl postgresql postgresql-contrib liquidsoap liquidsoap-plugin-all
+#
 # Install libretime
 #
 COPY help/prep_os.sh /prep_os.sh
@@ -59,6 +60,6 @@ COPY 1st_start.conf /etc/init
 
 VOLUME ["/etc/airtime", "/etc/icecast2", "/var/lib/postgresql", "/srv/airtime/stor", "/srv/airtime/watch"]
 
-EXPOSE 80 8000
+EXPOSE 80 8000 
 
 CMD ["/sbin/init"]
