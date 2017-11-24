@@ -2,7 +2,7 @@
 # Dockerfile based on work of https://hub.docker.com/_/ubuntu-upstart/
 # and inspired by https://github.com/okvic77/docker-airtime
 #
-FROM ubuntu:14.04
+FROM debian:stable-slim
 
 # ENV LANG en_US.UTF-8
 # ENV LANGUAGE en_US:en
