@@ -20,8 +20,7 @@ RUN locale-gen --purge en_US.UTF-8 \
     && update-locale LANG=en_US.UTF-8  LANGUAGE=en_US:en  LC_ALL=en_US.UTF-8 \
     && apt-get update && apt-get dist-upgrade -y \
     && apt-get install -y  python-psycopg2 nano \
-        git rabbitmq-server apache2 curl postgresql postgresql-contrib
-#
+        git rabbitmq-server apache2 curl postgresql postgresql-contrib liquidsoap liquidsoap-plugin-all
 # Install libretime
 #
 COPY help/prep_os.sh /prep_os.sh
